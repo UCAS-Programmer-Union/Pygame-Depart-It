@@ -1,6 +1,7 @@
 import pygame
 import json
 
+import game_states as gs
 import color as clr
 
 pygame.init()
@@ -18,4 +19,3 @@ DISPLAY = pygame.display.set_mode([DISPLAY_WIDTH, DISPLAY_HEIGHT])
 clock = pygame.time.Clock()
 
 def main_loop():
-    
