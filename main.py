@@ -14,3 +14,5 @@ for config in configs["main"]:
     DISPLAY_HEIGHT = config["DISPLAY_HEIGHT"]
 
 DISPLAY = pygame.display.set_mode([DISPLAY_WIDTH, DISPLAY_HEIGHT])
+
+clock = pygame.time.Clock()
