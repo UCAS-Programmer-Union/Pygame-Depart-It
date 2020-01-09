@@ -19,3 +19,5 @@ DISPLAY = pygame.display.set_mode([DISPLAY_WIDTH, DISPLAY_HEIGHT])
 clock = pygame.time.Clock()
 
 def main_loop():
+    # TODO: Pass necessary arguments after creating game_states.py
+    program_state = gs.Menu_State()
