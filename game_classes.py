@@ -14,3 +14,13 @@ class Wall_Block(pygame.sprite.Sprite):
     def __init__(self, x_map_index, y_map_index, wall_block_width = WALL_BLOCK_WIDTH,
         wall_block_length = WALL_BLOCK_LENGTH, color = clr.WHITE):
         super().__init__()
+
+        self.width = wall_block_width
+        self.length = wall_block_length
+
+        self.image = pygame.Surface([self.width, self.length])
+        self.image.fill(color)
+        self.rect = self.image.get_rect()
+
+        self.rect.x = x_map_index * self.width
+        self.rect.y = y_map_index * self.length
