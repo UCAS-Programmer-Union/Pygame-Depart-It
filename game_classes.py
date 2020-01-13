@@ -10,3 +10,5 @@ for config in configs:
     WALL_BLOCK_WIDTH = configs["WALL_BLOCK_WIDTH"]
     WALL_BLOCK_LENGTH = configs["WALL_BLOCK_LENGTH"]
 
+class Wall_Block(pygame.sprite.Sprite):
+    
