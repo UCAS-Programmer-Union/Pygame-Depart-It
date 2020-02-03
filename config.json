@@ -9,7 +9,9 @@
     "game_classes": [
         {
             "WALL_BLOCK_WIDTH": 25,
-            "WALL_BLOCK_LENGTH": 25
+            "WALL_BLOCK_LENGTH": 25,
+            "PLAYER_WIDTH": 20,
+            "PLAYER_LENGTH": 20
         }
     ]
 }    
