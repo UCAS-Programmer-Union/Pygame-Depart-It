@@ -24,3 +24,6 @@ class WallBlock(pygame.sprite.Sprite):
 
         self.rect.x = x_map_index * self.width
         self.rect.y = y_map_index * self.length
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self, spawn_x, spawn_y, color):
