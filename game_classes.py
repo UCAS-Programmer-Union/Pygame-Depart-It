@@ -39,3 +39,6 @@ class Player(pygame.sprite.Sprite):
         self.image = self.Surface([self.player_width, self.player_length])
         self.image.fill(color)
         self.rect = self.image.get_rect()
+
+        self.rect.x = spawn_x
+        self.rect.y = spawn_y
