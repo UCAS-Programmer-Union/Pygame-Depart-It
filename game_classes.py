@@ -32,3 +32,6 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, spawn_x, spawn_y, player_width = PLAYER_WIDTH, 
         player_length = PLAYER_LENGTH, color):
         super().__init__()
+
+        self.player_width = player_width
+        self.player_length = player_length
