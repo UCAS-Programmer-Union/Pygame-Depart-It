@@ -35,3 +35,7 @@ class Player(pygame.sprite.Sprite):
 
         self.player_width = player_width
         self.player_length = player_length
+
+        self.image = self.Surface([self.player_width, self.player_length])
+        self.image.fill(color)
+        self.rect = self.image.get_rect()
