@@ -45,3 +45,13 @@ class Player(pygame.sprite.Sprite):
         self.rect.y = spawn_y
 
         self.movement_speed = player_movement
+
+    def movement(self, direction):
+        if direction == "up":
+            self.rect.y -= direction
+        elif direction == "down":
+            self.rect.y += direction
+        elif direction == "left":
+            self.rect.x -= direction
+        elif direction == "right":
+            self.rect.x += direction
