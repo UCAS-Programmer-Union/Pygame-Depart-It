@@ -43,3 +43,5 @@ class Player(pygame.sprite.Sprite):
 
         self.rect.x = spawn_x
         self.rect.y = spawn_y
+
+        self.movement_speed = player_movement
