@@ -12,6 +12,7 @@ for config in configs:
 
     PLAYER_WIDTH = configs["PLAYER_WIDTH"]
     PLAYER_LENGTH = configs["PLAYER_LENGTH"]
+    PLAYER_MOVEMENT_SPEED = configs["PLAYER_MOVEMENT_SPEED"]
 
 class WallBlock(pygame.sprite.Sprite):
     def __init__(self, x_map_index, y_map_index, wall_block_width = WALL_BLOCK_WIDTH,
