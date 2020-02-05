@@ -14,3 +14,9 @@ class State():
 def MenuState(State):
     def __init__(self):
         super().__init__()
+
+    main_menu_main_text = "PYGAME DEPART IT"
+    main_menu_subtext = "A clone of Atari 2600 Escape It"
+
+    # TODO: Add buttons to move onto the game instead of having the user type a key.
+    main_menu_proceed_instructions_text = "Press Enter key to start game"
