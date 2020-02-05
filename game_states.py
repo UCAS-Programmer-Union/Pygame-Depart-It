@@ -1,14 +1,14 @@
 class State():
-    def __init__():
+    def __init__(self):
         pass
 
-    def render():
+    def render(self):
         raise NotImplementedError
 
-    def update():
+    def update(self):
         raise NotImplementedError
 
-    def handle_events():
+    def handle_events(self):
         raise NotImplementedError
 
 def MenuState(State):
