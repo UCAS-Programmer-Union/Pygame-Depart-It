@@ -81,3 +81,8 @@ class Player(pygame.sprite.Sprite):
         # the screen resolution.
         elif (self.rect.x + self.player_length) > 600: # 600 is the screen's width.
             self.rect.x = 600 - self.player_length
+
+    def update(self):
+        self.x_axis_boundary_check()
+        self.y_axis_boundary_check()
+        
