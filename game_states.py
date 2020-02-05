@@ -10,3 +10,7 @@ class State():
 
     def handle_events():
         raise NotImplementedError
+
+def MenuState(State):
+    def __init__(self):
+        super().__init__()
