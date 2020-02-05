@@ -11,7 +11,7 @@ class State():
     def handle_events(self):
         raise NotImplementedError
 
-def MenuState(State):
+class MenuState(State):
     def __init__(self):
         super().__init__()
 
