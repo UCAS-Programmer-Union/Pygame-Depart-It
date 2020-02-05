@@ -1,3 +1,5 @@
+import pygame
+
 class State():
     def __init__(self):
         pass
@@ -24,3 +26,4 @@ class MenuState(State):
     # As for now, we'll use Arial.
     self.main_font = pygame.font.Sysfont('Arial', 56)
     self.small_font = pygame.font.Sysfont('Arial', 32)
+        
