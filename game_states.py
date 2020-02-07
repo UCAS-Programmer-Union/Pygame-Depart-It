@@ -34,6 +34,8 @@ class MenuState(State):
         self.rendered_subtext = self.small_font.render(self.menu_subtext, True, clr.WHITE)
         self.rendered_proceed_instructions = self.small_font.render(self.proceed_instructions, True, clr.WHITE)
 
+        # TODO: Find a way to use the screen's display width and height to calculate
+        # the placement of the text instead of manually changing and adding it.
         screen.blit(rendered_menu_main_text, (300, 300))
         screen.blit(rendered_menu_subtext, (300, 360))
         screen.blit(rendered_proceed_instructions, (300, 420))
