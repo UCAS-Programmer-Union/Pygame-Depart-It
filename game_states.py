@@ -17,13 +17,23 @@ class MenuState(State):
     def __init__(self):
         super().__init__()
 
-    main_menu_main_text = "PYGAME DEPART IT"
-    main_menu_subtext = "A clone of Atari 2600 Escape It"
+    self.main_text = "PYGAME DEPART IT"
+    self.subtext = "A Clone Of Atari 2600 Escape It"
     # TODO: Add buttons to move onto the game instead of having the user type a key.
-    main_menu_proceed_instructions_text = "Press ENTER key to start game"
+    self.proceed_instructions = "Press ENTER Key To Start Game"
 
     # TODO: Create a setup.py file to install 8 bit font.
     # As for now, we'll use Arial.
     self.main_font = pygame.font.Sysfont('Arial', 56)
     self.small_font = pygame.font.Sysfont('Arial', 32)
-        
+    
+    def render(self, screen):
+        screen.fill(clr.BLACK)
+
+        self.rendered_main_text = self.font.render(self.main_text, True, clr.WHITE)
+        self.rendered_subtext = self.small_font.render(self.menu_subtext, True, clr.WHITE)
+        self.rendered_proceed_instructions = self.small_font.render(self.proceed_instructions, True, clr.WHITE)
+
+        screen.blit(rendered_menu_main_text, (300, 300))
+        screen.blit(rendered_menu_subtext, (300, 360))
+        screen.blit(rendered_proceed_instructions, (300, 420))
