@@ -39,3 +39,6 @@ class MenuState(State):
         screen.blit(rendered_menu_main_text, (300, 300))
         screen.blit(rendered_menu_subtext, (300, 360))
         screen.blit(rendered_proceed_instructions, (300, 420))
+
+    def update(self):
+        pass
