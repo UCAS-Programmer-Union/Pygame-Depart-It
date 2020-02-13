@@ -21,3 +21,10 @@ clock = pygame.time.Clock()
 def main_loop():
     # TODO: Pass necessary arguments after creating game_states.py
     program_state = gs.Menu_State()
+
+    pressed_buttons = pygame.key.get_pressed()
+    program_state.event_handling(pressed_buttons)
+
+    program_state.update()
+
+    program_state.render(DISPLAY)
