@@ -27,6 +27,7 @@ class MenuState(State):
     self.main_font = pygame.font.Sysfont('Arial', 56)
     self.small_font = pygame.font.Sysfont('Arial', 32)
     
+    ## Core Function
     def render(self, screen):
         screen.fill(clr.BLACK)
 
@@ -39,10 +40,14 @@ class MenuState(State):
         screen.blit(rendered_menu_main_text, (300, 300))
         screen.blit(rendered_menu_subtext, (300, 360))
         screen.blit(rendered_proceed_instructions, (300, 420))
+    ##
 
+    ## Core Function
     def update(self):
         pass
+    ##
 
+    ## Core Function
     def event_handling(self, pressed_buttons):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -53,3 +58,4 @@ class MenuState(State):
                 # TODO: Switch this to the game state.
                 pygame.quit()
                 quit()
+    ##
