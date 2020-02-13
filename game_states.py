@@ -42,3 +42,14 @@ class MenuState(State):
 
     def update(self):
         pass
+
+    def event_handling(self, pressed_buttons):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+            if pressed_buttons[K_SPACE]:
+                # TODO: Switch this to the game state.
+                pygame.quit()
+                quit()
