@@ -37,9 +37,9 @@ class MenuState(State):
 
         # TODO: Find a way to use the screen's display width and height to calculate
         # the placement of the text instead of manually changing and adding it.
-        screen.blit(rendered_menu_main_text, (300, 300))
-        screen.blit(rendered_menu_subtext, (300, 360))
-        screen.blit(rendered_proceed_instructions, (300, 420))
+        screen.blit(self.rendered_menu_main_text, (300, 300))
+        screen.blit(self.rendered_menu_subtext, (300, 360))
+        screen.blit(self.rendered_proceed_instructions, (300, 420))
     ##
 
     ## Core Function
