@@ -1,0 +1,18 @@
+{
+    "main": [
+        {
+            "FPS": 60,
+            "DISPLAY_WIDTH": 600,
+            "DISPLAY_HEIGHT": 600
+        }
+    ],
+    "game_classes": [
+        {
+            "WALL_BLOCK_WIDTH": 25,
+            "WALL_BLOCK_LENGTH": 25,
+            "PLAYER_WIDTH": 20,
+            "PLAYER_LENGTH": 20,
+            "PLAYER_MOVEMENT_SPEED": 5
+        }
+    ]
+}    
