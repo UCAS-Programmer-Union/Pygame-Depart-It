@@ -1,0 +1,9 @@
+{
+    "main": [
+        {
+            "FPS": 60,
+            "DISPLAY_WIDTH": 600,
+            "DISPLAY_HEIGHT": 600
+        }
+    ]
+}    

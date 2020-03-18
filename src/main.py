@@ -1,12 +1,12 @@
 import pygame
 import json
 
-import game_states as gs
+import GameStates.game_states as gs
 import color as clr
 
 pygame.init()
 
-with open('config.json') as config_json:
+with open('config_main.json') as config_json:
     configs = json.load(config_json)
 
 for config in configs["main"]:
