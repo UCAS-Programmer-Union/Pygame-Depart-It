@@ -2,8 +2,8 @@
     "main": [
         {
             "FPS": 60,
-            "DISPLAY_WIDTH": 600,
-            "DISPLAY_HEIGHT": 600
+            "DISPLAY_WIDTH": 800,
+            "DISPLAY_HEIGHT": 460
         }
     ]
 }    
