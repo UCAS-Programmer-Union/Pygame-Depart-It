@@ -6,7 +6,9 @@ import color as clr
 
 pygame.init()
 
-with open('config_main.json') as config_json:
+# TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+# of just Windows.
+with open('src\config_main.json') as config_json:
     configs = json.load(config_json)
 
 for config in configs["main"]:

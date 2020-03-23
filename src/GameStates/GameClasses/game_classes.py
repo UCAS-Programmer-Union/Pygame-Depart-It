@@ -3,6 +3,8 @@ import json
 
 import color as clr
 
+# TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+# of just Windows.
 with open('src\GameStates\GameClasses\config_gc.json') as config_json:
     configs = json.load(config_json)
 

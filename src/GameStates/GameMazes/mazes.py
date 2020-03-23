@@ -1,4 +1,6 @@
 def load_map(map_number):
+    # TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+    # of just Windows.
     map_file = "src\GameStates\GameMazes\maze_" + str(map_number)
 
     with open(map_file, "r") as opened_file:

@@ -19,6 +19,9 @@ class MenuState(State):
     def __init__(self, block_side_length):
         super().__init__()
 
+        # TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+        # of just Windows.
+
         # TODO: Find a way to download/package a font so that this can be done
         # without having to load images and can be blitted normally with text.
         self.one_player_text = pygame.image.load(r'src\GameStates\text_for_1p.jpg')
