@@ -1,5 +1,7 @@
 import pygame
 
+import GameClasses.game_classes as gc
+
 class State():
     def __init__(self):
         pass
