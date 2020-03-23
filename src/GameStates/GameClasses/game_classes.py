@@ -68,8 +68,8 @@ class Player(pygame.sprite.Sprite):
         # TODO: Change this so that the 600 is replaced by a variable or argument of some sort
         # so that you don't have to come back and change this every time you change
         # the screen resolution.
-        elif (self.rect.y + self.player_width) > 600: # 600 is the screen's width.
-            self.rect.y = 600 - self.player_width
+        elif (self.rect.y + self.player_width) > 480: # 800 is the screen's height.
+            self.rect.y = 480 - self.player_width
 
     # This is checking if the player has gone off the left or right walls.
     # Once again, this is kinda backwards that the y-axis checks the rect.x. Oh well.
@@ -81,8 +81,8 @@ class Player(pygame.sprite.Sprite):
         # TODO: Change this so that the 600 is replaced by a variable or argument of some sort
         # so that you don't have to come back and change this every time you change
         # the screen resolution.
-        elif (self.rect.x + self.player_length) > 600: # 600 is the screen's width.
-            self.rect.x = 600 - self.player_length
+        elif (self.rect.x + self.player_length) > 800: # 800 is the screen's width.
+            self.rect.x = 800 - self.player_length
 
     def update(self):
         self.x_axis_boundary_check()
