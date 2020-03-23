@@ -88,15 +88,15 @@ class MenuState(State):
                 pygame.quit()
                 quit()
 
-            if pressed_buttons[K_RETURN]:
+            if pressed_buttons[pygame.K_RETURN]:
                 # TODO: Switch the game_state to OnePlayerGameState
                 pygame.quit()
                 quit()
-            elif pressed_buttons[K_SPACE]:
+            elif pressed_buttons[pygame.K_SPACE]:
                 # TODO: Switch the game_state to TwoPlayerGameState
                 pygame.quit()
                 quit()
-            elif pressed_buttons[KEY_i]:
+            elif pressed_buttons[pygame.KEY_i]:
                 # TODO: Switch the game_state to InstructionState
                 pygame.quit()
                 quit()
