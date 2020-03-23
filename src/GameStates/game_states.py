@@ -17,7 +17,7 @@ class State():
         raise NotImplementedError
 
 class MenuState(State):
-    def __init__(self, block_side_length):
+    def __init__(self):
         super().__init__()
 
         # TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
@@ -33,7 +33,7 @@ class MenuState(State):
         self.all_sprites_group = pygame.sprite.Group()
 
         self._load_map()
-        self._create_map(block_side_length)
+        self._create_map()
 
     # I have to create a separate load file as GameMaze.maze is not designed to load start-menu.txt. 
     def _load_map(self):
@@ -54,11 +54,11 @@ class MenuState(State):
             self.map_list.append(self.temp_map_list)
             self.temp_map_list = []
 
-    def _create_map(self, block_side_length):
+    def _create_map(self):
         for y_index in range(len(self.map_list)):
             for x_index in range(len(self.map_list)):
                 if self.map_list[y_index][x_index] == "X":
-                    self.wall_block = gc.WallBlock((x_index * block_side_length), (y_index * block_side_length))
+                    self.wall_block = gc.WallBlock(x_index, y_index)
                     
                     self.wall_sprites_group.add(self.wall_block)
                     self.all_sprites_group.add(self.wall_block)
