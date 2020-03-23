@@ -36,7 +36,9 @@ class MenuState(State):
 
     # I have to create a separate load file as GameMaze.maze is not designed to load start-menu.txt. 
     def _load_map(self):
-        with open('start_menu.txt', 'r') as opened_file:
+        # TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+        # of just Windows.
+        with open('src\GameStates\start_menu.txt', 'r') as opened_file:
             self.raw_map_file = opened_file.read()
 
         self.raw_map_file = self.raw_map_file.splitlines()
