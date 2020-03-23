@@ -21,9 +21,9 @@ class MenuState(State):
 
     # TODO: Find a way to download/package a font so that this can be done
     # without having to load images and can be blitted normally with text.
-    self.one_player_text = pygame.image.load('src\GameStates\text_for_1p.jpg')
-    self.two_player_text = pygame.image.load('src\GameStates\text_for_2.jpg')
-    self.instructions_text = pygame.image.load('src\GameStates\text_for_instructions')
+    self.one_player_text = pygame.image.load(r'src\GameStates\text_for_1p.jpg')
+    self.two_player_text = pygame.image.load(r'src\GameStates\text_for_2.jpg')
+    self.instructions_text = pygame.image.load(r'src\GameStates\text_for_instructions')
 
     self.wall_sprites_group = pygame.sprite.Group()
     self.all_sprites_group = pygame.sprite.Group()
