@@ -58,17 +58,17 @@ class MenuState(State):
                     self.all_sprites_group.add(self.wall_block)
 
     ## Core Function
-    def render(self, screen):
-        screen.fill(clr.BLACK)
+    def render(self, display):
+        display.fill(clr.BLACK)
 
-        self.all_sprites_group.draw(screen)
+        self.all_sprites_group.draw(display)
 
         # TODO: Find a way to use the screen's display width and height to calculate
         # the placement of the text instead of manually changing and adding it.
         # TODO: Center and align text correctly.
-        screen.blit(self.one_player_text, (80, 340))
-        screen.blit(self.two_player_text, (400, 340))
-        screen.blit(self.instructions_text, (160, 420))
+        display.blit(self.one_player_text, (80, 340))
+        display.blit(self.two_player_text, (400, 340))
+        display.blit(self.instructions_text, (160, 420))
     ##
 
     ## Core Function
