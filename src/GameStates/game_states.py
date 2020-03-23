@@ -37,7 +37,7 @@ class MenuState(State):
             for character in row:
                 self.temp_map_list.append(character)
             
-            self.map_list.appened(self.temp_map_list)
+            self.map_list.append(self.temp_map_list)
             self.temp_map_list = []
 
     ## Core Function
