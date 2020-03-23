@@ -15,7 +15,7 @@ for config in configs:
     PLAYER_MOVEMENT_SPEED = configs["PLAYER_MOVEMENT_SPEED"]
 
 class WallBlock(pygame.sprite.Sprite):
-    def __init__(self, x_map_index, y_map_index, wall_block_width = WALL_BLOCK_WIDTH,
+    def __init__(self, x_map_index, y_map_index, wall_block_width = WALL_BLOCK_WIDTH, 
         wall_block_length = WALL_BLOCK_LENGTH, color = clr.WHITE):
         super().__init__()
 
@@ -30,8 +30,8 @@ class WallBlock(pygame.sprite.Sprite):
         self.rect.y = y_map_index * self.length
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self, spawn_x, spawn_y, player_width = PLAYER_WIDTH, 
-        player_length = PLAYER_LENGTH, player_movement = PLAYER_MOVEMENT_SPEED, color):
+    def __init__(self, spawn_x, spawn_y, color, player_width = PLAYER_WIDTH, 
+        player_length = PLAYER_LENGTH, player_movement = PLAYER_MOVEMENT_SPEED):
         super().__init__()
 
         self.player_width = player_width
