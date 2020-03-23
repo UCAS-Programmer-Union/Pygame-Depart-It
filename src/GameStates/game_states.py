@@ -25,6 +25,12 @@ class MenuState(State):
     self.two_player_text = pygame.image.load('text_for_2.jpg')
     self.instructions_text = pygame.image.load('text_for_instructions')
 
+    self.wall_sprites_group = pygame.sprite.Group()
+    self.all_sprites_group = pygame.sprite.Group()
+
+    self._load_map()
+    self._create_map(block_side_length)
+
     # I have to create a separate load file as GameMaze.maze is not designed to load start-menu.txt. 
     def _load_map(self):
         with open('start_menu.txt', 'r') as opened_file:
@@ -48,7 +54,7 @@ class MenuState(State):
                 if self.map_list[y_index][x_index] == "X":
                     self.wall_block = gc.WallBlock((x_index * block_side_length), (y_index * block_side_length))
                     
-                    self.wall_sprite_group.add(self.wall_block)
+                    self.wall_sprites_group.add(self.wall_block)
                     self.all_sprites_group.add(self.wall_block)
 
     ## Core Function
