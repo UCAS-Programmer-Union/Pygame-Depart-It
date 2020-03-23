@@ -1,6 +1,6 @@
 import pygame
 
-import GameClasses.game_classes as gc
+import GameStates.GameClasses.game_classes as gc
 
 class State():
     def __init__(self):
