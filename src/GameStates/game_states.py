@@ -16,7 +16,7 @@ class State():
         raise NotImplementedError
 
 class MenuState(State):
-    def __init__(self):
+    def __init__(self, block_side_length):
         super().__init__()
 
     # TODO: Find a way to download/package a font so that this can be done

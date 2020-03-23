@@ -19,8 +19,9 @@ DISPLAY = pygame.display.set_mode([DISPLAY_WIDTH, DISPLAY_HEIGHT])
 clock = pygame.time.Clock()
 
 def main_loop():
-    # TODO: Pass necessary arguments after creating game_states.py
-    program_state = gs.Menu_State()
+    # TODO: Find a way to dynamically pass this in instead of using a magic number.
+    # 20 is for the block_side_length
+    program_state = gs.Menu_State(20)
 
     pressed_buttons = pygame.key.get_pressed()
     program_state.event_handling(pressed_buttons)
