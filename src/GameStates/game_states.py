@@ -1,6 +1,7 @@
 import pygame
 
 import GameStates.GameClasses.game_classes as gc
+import color as clr
 
 class State():
     def __init__(self):
