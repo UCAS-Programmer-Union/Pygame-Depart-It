@@ -23,7 +23,7 @@ clock = pygame.time.Clock()
 def main_loop():
     # TODO: Find a way to dynamically pass this in instead of using a magic number.
     # 20 is for the block_side_length
-    program_state = gs.MenuState(20)
+    program_state = gs.MenuState()
 
     exit = False
     while exit != True:
