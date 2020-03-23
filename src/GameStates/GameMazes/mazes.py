@@ -1,5 +1,5 @@
 def load_map(map_number):
-    map_file = "maze_" + str(map_number)
+    map_file = "src\GameStates\GameMazes\maze_" + str(map_number)
 
     with open(map_file, "r") as opened_file:
         raw_map = opened_file.read()

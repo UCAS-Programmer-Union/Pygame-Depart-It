@@ -3,7 +3,7 @@ import json
 
 import color as clr
 
-with open('config_gc.json') as config_json:
+with open('src\GameStates\GameClasses\config_gc.json') as config_json:
     configs = json.load(config_json)
 
 for config in configs:
