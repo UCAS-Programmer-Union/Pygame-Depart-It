@@ -29,6 +29,11 @@ class MenuState(State):
         self.two_player_text = pygame.image.load(r'src\GameStates\text_for_2p.jpg')
         self.instructions_text = pygame.image.load(r'src\GameStates\text_for_instructions.jpg')
 
+        # Rescale images to better fit the window.
+        self.one_player_text = pygame.transform.scale(self.one_player_text, (292, 25))
+        self.two_player_text = pygame.transform.scale(self.two_player_text, (307, 25))
+        self.instructions_text = pygame.transform.scale(self.instructions_text, (474, 24))
+
         self.wall_sprites_group = pygame.sprite.Group()
         self.all_sprites_group = pygame.sprite.Group()
 
@@ -72,9 +77,9 @@ class MenuState(State):
         # TODO: Find a way to use the screen's display width and height to calculate
         # the placement of the text instead of manually changing and adding it.
         # TODO: Center and align text correctly.
-        display.blit(self.one_player_text, (80, 340))
-        display.blit(self.two_player_text, (400, 340))
-        display.blit(self.instructions_text, (160, 420))
+        display.blit(self.one_player_text, (80, 320))
+        display.blit(self.two_player_text, (400, 320))
+        display.blit(self.instructions_text, (160, 400))
     ##
 
     ## Core Function
