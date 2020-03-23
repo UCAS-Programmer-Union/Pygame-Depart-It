@@ -42,6 +42,15 @@ class MenuState(State):
             self.map_list.append(self.temp_map_list)
             self.temp_map_list = []
 
+    def _create_map(self, block_side_length):
+        for y_index in range(len(self.map_list)):
+            for x_index in range(len(self.map_list)):
+                if self.map_list[y_index][x_index] == "X":
+                    self.wall_block = gc.WallBlock((x_index * block_side_length), (y_index * block_side_length))
+                    
+                    self.wall_sprite_group.add(self.wall_block)
+                    self.all_sprites_group.add(self.wall_block)
+
     ## Core Function
     def render(self, screen):
         screen.fill(clr.BLACK)
