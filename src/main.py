@@ -31,3 +31,8 @@ def main_loop():
     program_state.update()
 
     program_state.render(DISPLAY)
+
+    pygame.display.update()
+    clock.tick(FPS)
+
+main_loop()
