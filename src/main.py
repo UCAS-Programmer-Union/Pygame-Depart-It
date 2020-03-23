@@ -25,14 +25,17 @@ def main_loop():
     # 20 is for the block_side_length
     program_state = gs.MenuState(20)
 
-    pressed_buttons = pygame.key.get_pressed()
-    program_state.event_handling(pressed_buttons)
+    exit = False
+    while exit != True:
 
-    program_state.update()
+        pressed_buttons = pygame.key.get_pressed()
+        program_state.event_handling(pressed_buttons)
 
-    program_state.render(DISPLAY)
+        program_state.update()
 
-    pygame.display.update()
-    clock.tick(FPS)
+        program_state.render(DISPLAY)
+
+        pygame.display.update()
+        clock.tick(FPS)
 
 main_loop()
