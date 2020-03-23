@@ -56,7 +56,7 @@ class MenuState(State):
 
     def _create_map(self):
         for y_index in range(len(self.map_list)):
-            for x_index in range(len(self.map_list)):
+            for x_index in range(len(self.map_list[y_index])):
                 if self.map_list[y_index][x_index] == "X":
                     self.wall_block = gc.WallBlock(x_index, y_index)
                     
