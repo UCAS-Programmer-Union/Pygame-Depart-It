@@ -6,7 +6,7 @@ import color as clr
 with open('src\GameStates\GameClasses\config_gc.json') as config_json:
     configs = json.load(config_json)
 
-for config in configs:
+for config in configs["game_classes"]:
     WALL_BLOCK_WIDTH = config["WALL_BLOCK_WIDTH"]
     WALL_BLOCK_LENGTH = config["WALL_BLOCK_LENGTH"]
 
