@@ -23,6 +23,23 @@ class MenuState(State):
     self.two_player_text = pygame.image.load('text_for_2.jpg')
     self.instructions_text = pygame.image.load('text_for_instructions')
 
+    # I have to create a separate load file as GameMaze.maze is not designed to load start-menu.txt. 
+    def _load_map(self):
+        with open('start_menu.txt', 'r') as opened_file:
+            self.raw_map_file = opened_file.read()
+
+        self.raw_map_file = self.raw_map_file.splitlines()
+
+        self.temp_map_list = []
+        self.map_list = []
+
+        for row in self.raw_map_file:
+            for character in row:
+                self.temp_map_list.append(character)
+            
+            self.map_list.appened(self.temp_map_list)
+            self.temp_map_list = []
+
     ## Core Function
     def render(self, screen):
         screen.fill(clr.BLACK)
