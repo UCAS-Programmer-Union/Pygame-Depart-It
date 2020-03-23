@@ -17,29 +17,22 @@ class MenuState(State):
     def __init__(self):
         super().__init__()
 
-    self.main_text = "PYGAME DEPART IT"
-    self.subtext = "A Clone Of Atari 2600 Escape It"
-    # TODO: Add buttons to move onto the game instead of having the user type a key.
-    self.proceed_instructions = "Press ENTER Key To Start Game"
+    # TODO: Find a way to download/package a font so that this can be done
+    # without having to load images and can be blitted normally with text.
+    self.one_player_text = pygame.image.load('text_for_1p.jpg')
+    self.two_player_text = pygame.image.load('text_for_2.jpg')
+    self.instructions_text = pygame.image.load('text_for_instructions')
 
-    # TODO: Create a setup.py file to install 8 bit font.
-    # As for now, we'll use Arial.
-    self.main_font = pygame.font.Sysfont('Arial', 56)
-    self.small_font = pygame.font.Sysfont('Arial', 32)
-    
     ## Core Function
     def render(self, screen):
         screen.fill(clr.BLACK)
 
-        self.rendered_main_text = self.font.render(self.main_text, True, clr.WHITE)
-        self.rendered_subtext = self.small_font.render(self.menu_subtext, True, clr.WHITE)
-        self.rendered_proceed_instructions = self.small_font.render(self.proceed_instructions, True, clr.WHITE)
-
         # TODO: Find a way to use the screen's display width and height to calculate
         # the placement of the text instead of manually changing and adding it.
-        screen.blit(self.rendered_menu_main_text, (300, 300))
-        screen.blit(self.rendered_menu_subtext, (300, 360))
-        screen.blit(self.rendered_proceed_instructions, (300, 420))
+        # TODO: Center and align text correctly.
+        screen.blit(self.one_player_text, (80, 340))
+        screen.blit(self.two_player_text, (400, 340))
+        screen.blit(self.instructions_text, (160, 420))
     ##
 
     ## Core Function
