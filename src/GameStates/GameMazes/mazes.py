@@ -1,19 +1,22 @@
-def open_maze(maze_number):
-    maze_file = "maze_" + str(maze_number)
+def load_map(map_number):
+    # TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+    # of just Windows.
+    map_file = "src\GameStates\GameMazes\maze_" + str(map_number)
 
-    with open(maze_file, "r") as opened_file:
-        raw_maze = opened_file.read()
+    with open(map_file, "r") as opened_file:
+        raw_map = opened_file.read()
 
-    return _convert_maze(raw_maze)
+    return _convert_map(raw_map)
 
-def _convert_maze(raw_maze_string):
-    raw_maze_string = raw_maze_string.splitlines()
+# Converts the string into a list.
+def _convert_map(raw_map_string):
+    raw_map_string = raw_map_string.splitlines()
     map_list = []
     temp_map_list = []
-    # The 24 is for the resolution/block_width
+
     for row in raw_maze_string:
-        for column in row:
-            temp_map_list.append(column)
+        for character in row:
+            temp_map_list.append(character)
 
         map_list.append(temp_map_list)
         temp_map_list = []

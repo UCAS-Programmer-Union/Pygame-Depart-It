@@ -1,5 +1,8 @@
 import pygame
 
+import GameStates.GameClasses.game_classes as gc
+import color as clr
+
 class State():
     def __init__(self):
         pass
@@ -17,29 +20,66 @@ class MenuState(State):
     def __init__(self):
         super().__init__()
 
-    self.main_text = "PYGAME DEPART IT"
-    self.subtext = "A Clone Of Atari 2600 Escape It"
-    # TODO: Add buttons to move onto the game instead of having the user type a key.
-    self.proceed_instructions = "Press ENTER Key To Start Game"
+        # TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+        # of just Windows.
 
-    # TODO: Create a setup.py file to install 8 bit font.
-    # As for now, we'll use Arial.
-    self.main_font = pygame.font.Sysfont('Arial', 56)
-    self.small_font = pygame.font.Sysfont('Arial', 32)
-    
+        # TODO: Find a way to download/package a font so that this can be done
+        # without having to load images and can be blitted normally with text.
+        self.one_player_text = pygame.image.load(r'src\GameStates\text_for_1p.jpg')
+        self.two_player_text = pygame.image.load(r'src\GameStates\text_for_2p.jpg')
+        self.instructions_text = pygame.image.load(r'src\GameStates\text_for_instructions.jpg')
+
+        # Rescale images to better fit the window.
+        self.one_player_text = pygame.transform.scale(self.one_player_text, (292, 25))
+        self.two_player_text = pygame.transform.scale(self.two_player_text, (307, 25))
+        self.instructions_text = pygame.transform.scale(self.instructions_text, (474, 24))
+
+        self.wall_sprites_group = pygame.sprite.Group()
+        self.all_sprites_group = pygame.sprite.Group()
+
+        self._load_map()
+        self._create_map()
+
+    # I have to create a separate load file as GameMaze.maze is not designed to load start-menu.txt. 
+    def _load_map(self):
+        # TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+        # of just Windows.
+        with open('src\GameStates\start_menu.txt', 'r') as opened_file:
+            self.raw_map_file = opened_file.read()
+
+        self.raw_map_file = self.raw_map_file.splitlines()
+
+        self.temp_map_list = []
+        self.map_list = []
+
+        for row in self.raw_map_file:
+            for character in row:
+                self.temp_map_list.append(character)
+            
+            self.map_list.append(self.temp_map_list)
+            self.temp_map_list = []
+
+    def _create_map(self):
+        for y_index in range(len(self.map_list)):
+            for x_index in range(len(self.map_list[y_index])):
+                if self.map_list[y_index][x_index] == "X":
+                    self.wall_block = gc.WallBlock(x_index, y_index)
+                    
+                    self.wall_sprites_group.add(self.wall_block)
+                    self.all_sprites_group.add(self.wall_block)
+
     ## Core Function
-    def render(self, screen):
-        screen.fill(clr.BLACK)
+    def render(self, display):
+        display.fill(clr.BLACK)
 
-        self.rendered_main_text = self.font.render(self.main_text, True, clr.WHITE)
-        self.rendered_subtext = self.small_font.render(self.menu_subtext, True, clr.WHITE)
-        self.rendered_proceed_instructions = self.small_font.render(self.proceed_instructions, True, clr.WHITE)
+        self.all_sprites_group.draw(display)
 
         # TODO: Find a way to use the screen's display width and height to calculate
         # the placement of the text instead of manually changing and adding it.
-        screen.blit(self.rendered_menu_main_text, (300, 300))
-        screen.blit(self.rendered_menu_subtext, (300, 360))
-        screen.blit(self.rendered_proceed_instructions, (300, 420))
+        # TODO: Center and align text correctly.
+        display.blit(self.one_player_text, (80, 320))
+        display.blit(self.two_player_text, (400, 320))
+        display.blit(self.instructions_text, (160, 400))
     ##
 
     ## Core Function
@@ -54,8 +94,16 @@ class MenuState(State):
                 pygame.quit()
                 quit()
 
-            if pressed_buttons[K_SPACE]:
-                # TODO: Switch this to the game state.
+            if pressed_buttons[pygame.K_RETURN]:
+                # TODO: Switch the game_state to OnePlayerGameState
+                pygame.quit()
+                quit()
+            elif pressed_buttons[pygame.K_SPACE]:
+                # TODO: Switch the game_state to TwoPlayerGameState
+                pygame.quit()
+                quit()
+            elif pressed_buttons[pygame.K_i]:
+                # TODO: Switch the game_state to InstructionState
                 pygame.quit()
                 quit()
     ##

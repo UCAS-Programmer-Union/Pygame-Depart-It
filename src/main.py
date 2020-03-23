@@ -6,7 +6,9 @@ import color as clr
 
 pygame.init()
 
-with open('config_main.json') as config_json:
+# TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
+# of just Windows.
+with open('src\config_main.json') as config_json:
     configs = json.load(config_json)
 
 for config in configs["main"]:
@@ -19,12 +21,21 @@ DISPLAY = pygame.display.set_mode([DISPLAY_WIDTH, DISPLAY_HEIGHT])
 clock = pygame.time.Clock()
 
 def main_loop():
-    # TODO: Pass necessary arguments after creating game_states.py
-    program_state = gs.Menu_State()
+    # TODO: Find a way to dynamically pass this in instead of using a magic number.
+    # 20 is for the block_side_length
+    program_state = gs.MenuState()
 
-    pressed_buttons = pygame.key.get_pressed()
-    program_state.event_handling(pressed_buttons)
+    exit = False
+    while exit != True:
 
-    program_state.update()
+        pressed_buttons = pygame.key.get_pressed()
+        program_state.event_handling(pressed_buttons)
 
-    program_state.render(DISPLAY)
+        program_state.update()
+
+        program_state.render(DISPLAY)
+
+        pygame.display.update()
+        clock.tick(FPS)
+
+main_loop()
