@@ -7,12 +7,12 @@ with open('src\GameStates\GameClasses\config_gc.json') as config_json:
     configs = json.load(config_json)
 
 for config in configs:
-    WALL_BLOCK_WIDTH = configs["WALL_BLOCK_WIDTH"]
-    WALL_BLOCK_LENGTH = configs["WALL_BLOCK_LENGTH"]
+    WALL_BLOCK_WIDTH = config["WALL_BLOCK_WIDTH"]
+    WALL_BLOCK_LENGTH = config["WALL_BLOCK_LENGTH"]
 
-    PLAYER_WIDTH = configs["PLAYER_WIDTH"]
-    PLAYER_LENGTH = configs["PLAYER_LENGTH"]
-    PLAYER_MOVEMENT_SPEED = configs["PLAYER_MOVEMENT_SPEED"]
+    PLAYER_WIDTH = config["PLAYER_WIDTH"]
+    PLAYER_LENGTH = config["PLAYER_LENGTH"]
+    PLAYER_MOVEMENT_SPEED = config["PLAYER_MOVEMENT_SPEED"]
 
 class WallBlock(pygame.sprite.Sprite):
     def __init__(self, x_map_index, y_map_index, color = clr.WHITE, 
