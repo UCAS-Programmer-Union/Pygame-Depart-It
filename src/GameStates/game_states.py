@@ -61,6 +61,8 @@ class MenuState(State):
     def render(self, screen):
         screen.fill(clr.BLACK)
 
+        self.all_sprites_group.draw(screen)
+
         # TODO: Find a way to use the screen's display width and height to calculate
         # the placement of the text instead of manually changing and adding it.
         # TODO: Center and align text correctly.
