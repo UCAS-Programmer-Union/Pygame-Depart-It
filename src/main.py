@@ -21,7 +21,7 @@ clock = pygame.time.Clock()
 def main_loop():
     # TODO: Find a way to dynamically pass this in instead of using a magic number.
     # 20 is for the block_side_length
-    program_state = gs.Menu_State(20)
+    program_state = gs.MenuState(20)
 
     pressed_buttons = pygame.key.get_pressed()
     program_state.event_handling(pressed_buttons)
