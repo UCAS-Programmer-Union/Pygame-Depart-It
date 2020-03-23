@@ -3,7 +3,7 @@ import json
 
 import color as clr
 
-with open("config_gc.json") as config_json:
+with open('config_gc.json') as config_json:
     configs = json.load(config_json)
 
 for config in configs:
@@ -15,8 +15,8 @@ for config in configs:
     PLAYER_MOVEMENT_SPEED = configs["PLAYER_MOVEMENT_SPEED"]
 
 class WallBlock(pygame.sprite.Sprite):
-    def __init__(self, x_map_index, y_map_index, wall_block_width = WALL_BLOCK_WIDTH, 
-        wall_block_length = WALL_BLOCK_LENGTH, color = clr.WHITE):
+    def __init__(self, x_map_index, y_map_index, color = clr.WHITE, 
+        wall_block_width = WALL_BLOCK_WIDTH, wall_block_length = WALL_BLOCK_LENGTH):
         super().__init__()
 
         self.width = wall_block_width
