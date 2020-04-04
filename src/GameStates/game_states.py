@@ -126,10 +126,15 @@ class OnePlayerGameState(State):
     def __init__(self, player_side_length, display_width, display_height):
         super().__init__()
 
+        self.PLAYER_SIDE_LENGTH = player_side_length
+        self.DISPLAY_WIDTH = display_width
+        self.DISPLAY_HEIGHT = display_height
+
         self.wall_group = pygame.sprite.Group()
         self.player_group = pygame.sprite.Group()
 
-        self.player_one = gc.Player(player_side_length, display_height - (player_side_length * 2), clr.BLUE)
+        self.player_one = gc.Player(self.PLAYER_SIDE_LENGTH, self.DISPLAY_HEIGHT - 
+            (self.PLAYER_SIDE_LENGTH * 2), clr.BLUE)
         self.player_group.add(self.player_one)
 
         self.load_map()
