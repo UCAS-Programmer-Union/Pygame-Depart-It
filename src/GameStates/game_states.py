@@ -29,7 +29,7 @@ class MenuState(State):
         self.two_player_text = pygame.image.load(r'src\GameStates\text_for_2p.jpg')
         self.instructions_text = pygame.image.load(r'src\GameStates\text_for_instructions.jpg')
 
-        # Rescale images to better fit the window.
+        # Rescale images to better fit the window. Rescaled by a factor of 0.8
         self.one_player_text = pygame.transform.scale(self.one_player_text, (292, 25))
         self.two_player_text = pygame.transform.scale(self.two_player_text, (307, 25))
         self.instructions_text = pygame.transform.scale(self.instructions_text, (474, 24))
