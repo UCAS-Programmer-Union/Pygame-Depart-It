@@ -106,4 +106,17 @@ class MenuState(State):
                 # TODO: Switch the game_state to InstructionState
                 pygame.quit()
                 quit()
-    ##
+    #
+
+class OnePlayerGameState(State):
+    def __init__(self, player_side_length, display_width, display_height):
+        super().__init__()
+
+        self.wall_group = pygame.sprite.Group()
+        self.player_group = pygame.sprite.Group()
+
+        self.player_one = gc.Player(player_side_length, display_height - (player_side_length * 2), clr.BLUE)
+        self.player_group.add(self.player_one)
+
+        self.load_map()
+        
