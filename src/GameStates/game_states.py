@@ -1,4 +1,5 @@
 import pygame
+import json
 
 import GameStates.GameClasses.game_classes as gc
 import color as clr
@@ -19,6 +20,19 @@ class State():
 class MenuState(State):
     def __init__(self):
         super().__init__()
+
+        with open('src\config_main.json') as self.config_json_main:
+            self.configs_main = json.load(self.config_json_main)
+
+        for config in self.configs_main["main"]:
+            self.DISPLAY_WIDTH = config["DISPLAY_WIDTH"]
+            self.DISPLAY_HEIGHT = config["DISPLAY_HEIGHT"]
+
+        with open('src\GameStates\GameClasses\config_gc.json') as self.config_json_gc:
+            self.configs_gc = json.load(self.config_json_gc)
+
+        for config in self.configs_gc["game_classes"]:
+            self.PLAYER_SIDE_LENGTH = config["PLAYER_LENGTH"]
 
         # TODO: Use os to get path names that will work for Windows, Mac, and Linux instead
         # of just Windows.
