@@ -136,8 +136,19 @@ class OnePlayerGameState(State):
 
         self.player_one = gc.Player(self.PLAYER_SIDE_LENGTH, self.DISPLAY_HEIGHT - 
             (self.PLAYER_SIDE_LENGTH * 2), clr.BLUE)
-        self.player_group.add(self.player_one)
         self.all_sprites_group.add(self.player_one)
+        self.player_group.add(self.player_one)
 
-        self.load_map()
+        # 60 is the number of the last map for the game as of now.
+        self.map_number = random.randint(1, 60)
+        self._create_map()
         
+    def _create_map():
+        self.map_list = mz.load_map(self.map_numer)
+
+        for y_index in range(len(self.map_list)):
+            for x_index in range(len(self.map_list[y_index])):
+                self.wall_block = gc.WallBlock(x_index, y_index)
+                
+                self.all_sprites_group.add(self.wall_block)
+                self.wall_group.add(self.wall_block)
