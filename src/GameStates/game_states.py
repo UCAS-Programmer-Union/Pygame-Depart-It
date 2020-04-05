@@ -141,11 +141,11 @@ class OnePlayerGameState(State):
         self.all_sprites_group.add(self.player_one)
         self.player_group.add(self.player_one)
 
-        # 60 is the number of the last map for the game as of now.
-        self.map_number = random.randint(1, 60)
         self._create_map()
         
     def _create_map():
+        # 60 is the number of the last map for the game as of now.
+        self.map_number = random.randint(1, 60)
         self.map_list = mz.load_map(self.map_numer)
 
         for y_index in range(len(self.map_list)):
