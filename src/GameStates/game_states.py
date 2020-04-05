@@ -159,3 +159,10 @@ class OnePlayerGameState(State):
         display.fill(clr.BLACK)
 
         self.all_sprites_group.draw(display)
+
+    def update(self):
+        self._create_map()
+
+        self._check_collision()
+
+        self.all_sprites_group.update()
