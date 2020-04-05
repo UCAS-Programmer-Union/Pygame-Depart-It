@@ -1,7 +1,9 @@
 import pygame
 import json
+import random
 
 import GameStates.GameClasses.game_classes as gc
+import GameStates.GameMazes.mazes as mz
 import color as clr
 
 class State():
@@ -149,6 +151,6 @@ class OnePlayerGameState(State):
         for y_index in range(len(self.map_list)):
             for x_index in range(len(self.map_list[y_index])):
                 self.wall_block = gc.WallBlock(x_index, y_index)
-                
+
                 self.all_sprites_group.add(self.wall_block)
                 self.wall_group.add(self.wall_block)
