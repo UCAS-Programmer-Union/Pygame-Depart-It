@@ -163,6 +163,10 @@ class OnePlayerGameState(State):
     def update(self):
         self._create_map()
 
-        self._check_collision()
+        self._check_collision(self.player_one)
 
         self.all_sprites_group.update()
+
+    def _check_collision(self, player):
+        if pygame.sprite.spritecollide(player, self.wall_group, "False"):
+            player.reset_movement()
