@@ -154,3 +154,8 @@ class OnePlayerGameState(State):
 
                 self.all_sprites_group.add(self.wall_block)
                 self.wall_group.add(self.wall_block)
+
+    def render(self, display):
+        display.fill(clr.BLACK)
+
+        self.all_sprites_group.draw(display)
