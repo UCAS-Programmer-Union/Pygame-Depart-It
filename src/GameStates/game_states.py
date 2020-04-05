@@ -48,8 +48,8 @@ class MenuState(State):
         self.two_player_text = pygame.transform.scale(self.two_player_text, (307, 25))
         self.instructions_text = pygame.transform.scale(self.instructions_text, (474, 24))
 
-        self.wall_sprites_group = pygame.sprite.Group()
         self.all_sprites_group = pygame.sprite.Group()
+        self.wall_group = pygame.sprite.Group()
 
         self._load_map()
         self._create_map()
@@ -79,7 +79,7 @@ class MenuState(State):
                 if self.map_list[y_index][x_index] == "X":
                     self.wall_block = gc.WallBlock(x_index, y_index)
                     
-                    self.wall_sprites_group.add(self.wall_block)
+                    self.wall_group.add(self.wall_block)
                     self.all_sprites_group.add(self.wall_block)
 
     ## Core Function
