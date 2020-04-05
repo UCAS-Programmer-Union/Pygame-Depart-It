@@ -50,13 +50,13 @@ class Player(pygame.sprite.Sprite):
 
     def movement(self, direction):
         if direction == "left":
-            self.rect.x -= direction
+            self.rect.x -= self.movement_speed
         elif direction == "right":
-            self.rect.x += direction
+            self.rect.x += self.movement_speed
         elif direction == "up":
-            self.rect.y -= direction
+            self.rect.y -= self.movement_speed
         elif direction == "down":
-            self.rect.y += direction
+            self.rect.y += self.movement_speed
 
     # This is checking if the player has gone off the top or bottom walls.
     # Kinda backwards that the x-axis checks the rect.y. Oh well.
